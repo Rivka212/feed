@@ -1,0 +1,26 @@
+.main-container {
+    // display: flex;
+    justify-content: center;
+    align-content: center;
+    max-width: 450px;
+    margin: 50px;
+    background-color: rgb(240, 242, 243);
+    // grid-template-columns:  1fr;
+
+    // >* {
+    //     grid-column: 2;
+
+    //     &.full {
+    //         grid-column: 1 / -1;
+    //     }
+    // }
+
+    // .comment-details{
+    //     grid-column: 1;
+    // }
+
+    // .comment-list{
+    //     grid-column: 2;
+    // }
+
+}

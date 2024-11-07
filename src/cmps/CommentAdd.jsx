@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { commentService } from '../services/comment/comment.service'
+import { commentService } from '../services/comment/comment.service.local'
 
 export function CommentAdd({ onAddComment }) {
     const [commentToAdd, setCommentToAdd] = useState(commentService.getEmptyComment())

@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
-// import { CommentDetails } from './CommentDetails.jsx'
 import { CommentList } from '../cmps/CommentList.jsx'
 import { CommentFilter } from '../cmps/CommentFilter.jsx'
 import { CommentAdd } from '../cmps/CommentAdd.jsx'
 import { loadComments, removeComment, addComment } from '../store/actions/comment.action.js'
-import { commentService } from '../services/comment/comment.service.js'
+import { commentService } from '../services/comment/comment.service.local.js'
 
 
 export function CommentIndex() {
@@ -46,7 +45,6 @@ export function CommentIndex() {
 
     return (
         <section className="main-container">
-            {/* {currentComment && <CommentDetails comment={currentComment} />} */}
             <CommentAdd onAddComment={onAddComment} />
             <div>
                 <CommentFilter filterBy={filterBy} onFilterBy={onSetFilterBy} />

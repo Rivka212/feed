@@ -1,10 +1,8 @@
 .comment-add {
     columns: 1;
     background-color: rgb(230, 233, 235);
-    // align-content: center;
-    // justify-content: center;
     margin: 50px;
-    margin-bottom:0 ;
+    margin-bottom:0;
     padding: 10px;
 
     input,
@@ -13,8 +11,6 @@
         display: flex;
         margin: 10px;
     }
-
-   
 
     input {
         height: 35px;
@@ -35,6 +31,9 @@
         font-size: 10px;
         color: aliceblue;
         background-color: rgb(95, 155, 246);
+        align-self: flex-end;
+        margin-left: auto;
+        margin-right: 20px;
     }
 
 }

@@ -1,4 +1,4 @@
-import { commentService } from '../../services/comment/comment.service.local.js'
+import { commentService } from '../../services/comment/comment.service.js'
 import { ADD_COMMENT, REMOVE_COMMENT, SET_COMMENT, SET_COMMENTS } from '../reducers/comment.reducer.js'
 import { store } from '../store.js'
 

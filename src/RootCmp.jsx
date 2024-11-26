@@ -1,7 +1,7 @@
 import React from 'react'
 import {Routes, Route} from 'react-router'
 
-import {CommentIndex} from './pages/CommentIndex.jsx'
+import {ProductIndex} from './pages/ProductIndex.jsx'
 
 
 export function RootCmp() {
@@ -9,7 +9,7 @@ export function RootCmp() {
   return (
  <main>
   <Routes>
-    <Route path="/" element={<CommentIndex/>} >
+    <Route path="/" element={<ProductIndex/>} >
     </Route>
   </Routes>
  </main>

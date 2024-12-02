@@ -1,9 +1,9 @@
 import { legacy_createStore as createStore, combineReducers } from 'redux'
 
-import { commentReducer } from './reducers/comment.reducer.js'
+import { productReducer } from './reducers/product.reducer.js'
 
 const rootReducer = combineReducers({
-    commentModule: commentReducer,
+    productModule: productReducer,
 })
 
 const middleware = (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__)? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__() : undefined

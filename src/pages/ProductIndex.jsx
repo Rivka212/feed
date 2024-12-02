@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 
 import { ProductList } from '../cmps/ProductList.jsx'
 import { ProductFilter } from '../cmps/ProductFilter.jsx'
-import { ProductAdd } from '../cmps/ProductAdd.jsx'
 import { loadProducts, removeProduct, addProduct } from '../store/actions/product.action.js'
 import { productService } from '../services/product/product.service.js'
 
@@ -45,7 +44,6 @@ export function ProductIndex() {
 
     return (
         <section className="main-container">
-            <ProductAdd onAddProduct={onAddProduct} />
             <div>
                 <ProductFilter filterBy={filterBy} onFilterBy={onSetFilterBy} />
                 <ProductList products={products} onRemoveProduct={onRemoveProduct} />

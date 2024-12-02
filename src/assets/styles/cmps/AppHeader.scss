@@ -1,0 +1,67 @@
+.header-container {
+
+    .app-header {
+        display: flex;
+        // align-content: center;
+        // justify-content: space-between;
+        padding: 15px;
+        color: rgb(243, 233, 221);
+        background-color: rgba(0, 0, 0, 0.692);
+
+        h1 {
+            margin: 0;
+            margin-right: auto;
+            font-size: 25px;
+        }
+
+       img.cart{
+        height: 18px;
+        margin-top: 4px;
+        filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+        }
+    }
+
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-inline-end:17px ;
+        color: rgb(243, 233, 221);
+        margin-top: 10px;
+    }
+
+    img.cart:hover{
+        height: 21px;
+    }
+
+    a:hover{
+        font-size: 18px;
+        color:rgb(170, 121, 96)
+    }
+
+    .app-nav {
+        display: flex;
+        // align-content: center;
+        // justify-self: center;
+        justify-self: space-between;
+        // margin-left: 10px;
+    }
+
+    img {
+        height: 300px;
+        width: 100%; 
+        object-fit:cover;
+    }
+}
+
+
+
+
+// <nav className="app-nav">
+//     <NavLink to="/">home</NavLink>
+//     <NavLink to="/about">about us</NavLink>
+//     <NavLink to="/contact">contact us</NavLink>
+//     <img src="" alt="cart" />
+// </nav>
+// <img src={`../../imgs/office.jpg`} alt="shopping-image" />
+// </section>
+// </header>

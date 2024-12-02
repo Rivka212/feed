@@ -2,10 +2,12 @@ export const SET_PRODUCTS = 'SET_PRODUCTS'
 export const SET_PRODUCT = 'SET_PRODUCT'
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 export const ADD_PRODUCT = 'ADD_PRODUCT'
+export const SET_CART = 'SET_CART'
 
 const initialState = {
     products: [],
     product: null,
+    cart:[],
 }
 
 export function productReducer(state = initialState, action) {
@@ -27,6 +29,11 @@ export function productReducer(state = initialState, action) {
         case ADD_PRODUCT:
             newState = { ...state, products: [...state.products, action.product] }
             break
+            case SET_CART:
+                products = state.products.map(product => action.product.inCart == 'yes'),
+                newState = { ...state, products}
+
+                break
         default:
     }
     return newState

@@ -23,6 +23,18 @@ export async function loadProduct() {
     }
 }
 
+export async function loadCart(filterBy = {inCart}) {
+    try {
+        const products = await productService.query(filterBy)
+        store.dispatch(getCmdSetProducts(products))
+        // return product
+    } catch (err) {
+        console.log('Cannot load cart', err)
+        throw err
+    }
+}
+
+
 export async function removeProduct(productId) {
     try {
         const product = await productService.remove(productId)

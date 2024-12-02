@@ -21,11 +21,13 @@ async function query(filterBy = {}) {
     //     const regExp = new RegExp(filterBy.message, 'i')
     //     Products = Products.filter(Product => regExp.test(Product.message))
     // }
-    // if (filterBy.email) {
-    //     Products = Products.filter(Product => Product.message === filterBy.email)
-    // }
+    if (filterBy.inCart) {
+        products = products.filter(product => product.inCart === 'yes')
+    }
     return products
 }
+
+// loadCart
 
 
 function getById(productId) {
@@ -58,63 +60,63 @@ function _createProducts() {
                 title: 'tablet',
                 price: 900,
                 img: 'tablet.jpg',
-                inCart:'yes',
+                inCart: 'yes',
             },
             {
                 id: 2,
                 title: 'lamp',
                 price: 45,
-                img:'lamp.jpg',
-                inCart:'yes',
+                img: 'lamp.jpg',
+                inCart: 'yes',
             },
             {
                 id: 3,
                 title: 'box-pens',
                 price: 12,
-                img:'box-pens.jpg',
-                inCart:'yes',
+                img: 'box-pens.jpg',
+                inCart: 'yes',
             },
             {
                 id: 4,
                 title: 'flowerpot',
                 price: 50,
                 img: 'flowerpot.jpg',
-                inCart:'yes',
+                inCart: 'yes',
             },
             {
                 id: 5,
                 title: 'diary',
                 price: 23,
                 img: 'diary.jpg',
-                inCart:'yes',
+                inCart: 'yes',
             },
             {
                 id: 6,
                 title: 'calculator',
                 price: 18,
                 img: 'calculator.jpg',
-                inCart:'yes',
+                inCart: 'yes',
             },
             {
                 id: 7,
                 title: 'letter',
                 price: 5,
-                img:'letter.jpg',
-                inCart:'yes',
+                img: 'letter.jpg',
+                inCart: 'yes',
             },
             {
                 id: 8,
                 title: 'pens',
                 price: 12,
-                img:'pens.jpg',
-                inCart:'yes',
+                img: 'pens.jpg',
+                inCart: 'yes',
             },
             {
                 id: 9,
                 title: 'notebook',
                 price: 17,
-                img:'notebook.jpg',
-                inCart:'yes',
+                img: 'notebook.jpg',
+                inCart: 'yes',
             },
         ]
         saveToStorage(STORAGE_KEY, products)

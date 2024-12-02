@@ -1,0 +1,70 @@
+.cart {
+    padding-inline: 50px;
+    margin: 40px;
+
+
+
+    h1 {
+        font-size: 25px;
+        margin-top: 30px;
+    }
+
+    .cart-list {
+        column: 1;
+
+    }
+
+    img {
+        height: 100px;
+        width: 100px;
+        border-radius: 5px;
+    }
+
+    article {
+        display: flex;
+        justify-content: start;
+        align-content: center;
+        max-width: 500px;
+        background-color: rgb(173, 168, 168);
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+
+        div {
+            margin-left: 10px;
+
+            h4 {
+                margin: 0;
+                text-transform: capitalize;
+            }
+
+            h4:first-of-type {
+                font-size: 20px;
+                margin-top: 40px;
+            }
+
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+// turn (
+//         <section className='cart'>
+//             <h1 >MY CART</h1>
+//             <ul className="cart-list">
+//                 {products.map(product => (
+//                     <li className="cart-preview" key={product.id}>
+//                         <CartPreview product={product} />
+//                     </li>
+//                 )
+//                 )}
+//             // </ul>

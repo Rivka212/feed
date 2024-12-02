@@ -1,18 +1,20 @@
 import React from 'react'
-import {Routes, Route} from 'react-router'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
-import {ProductIndex} from './pages/ProductIndex.jsx'
-
+import { AppHeader } from './cmps/AppHeader.jsx'
+import { ProductIndex } from './pages/ProductIndex.jsx'
+import { CartList } from './pages/CartList.jsx'
 
 export function RootCmp() {
 
   return (
- <main>
-  <Routes>
-    <Route path="/" element={<ProductIndex/>} >
-    </Route>
-  </Routes>
- </main>
- 
+      <section className="app">
+        <main>
+          <Routes>
+            <Route path="/" element={<ProductIndex />} />
+            <Route path="/cart" element={<CartList />} />
+          </Routes>
+        </main>
+      </section>
   )
 }

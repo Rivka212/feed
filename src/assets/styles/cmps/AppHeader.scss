@@ -14,28 +14,30 @@
             font-size: 25px;
         }
 
-       img.cart{
-        height: 18px;
-        margin-top: 4px;
-        filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+        img.cart {
+            height: 18px;
+            margin: 0;
+            margin-top: 4px;
+            padding: 0;
+            filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
         }
     }
 
     a {
         text-decoration: none;
         text-transform: uppercase;
-        margin-inline-end:17px ;
+        margin-inline-end: 17px;
         color: rgb(243, 233, 221);
         margin-top: 10px;
     }
 
-    img.cart:hover{
+    img.cart:hover {
         height: 21px;
     }
 
-    a:hover{
+    a:hover {
         font-size: 18px;
-        color:rgb(170, 121, 96)
+        color: rgb(170, 121, 96)
     }
 
     .app-nav {
@@ -46,10 +48,10 @@
         // margin-left: 10px;
     }
 
-    img {
+    .main-image {
         height: 300px;
-        width: 100%; 
-        object-fit:cover;
+        width: 100%;
+        object-fit: cover;
     }
 }
 

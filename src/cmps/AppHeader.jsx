@@ -5,7 +5,7 @@ export function AppHeader() {
         <header>
             <section className="header-container">
                 <section className="app-header">
-                    <h1 >SHOPPING CART</h1>
+                    <h1 >OfficeCart</h1>
                     <nav className="app-nav">
                         <NavLink to="/">home</NavLink>
                         <NavLink to="/about">about us</NavLink>
@@ -13,7 +13,7 @@ export function AppHeader() {
                         <NavLink to="/cart"><img className="cart" src={`../../icons/cart.png`} alt="cart"/></NavLink>
                     </nav>
                 </section>
-                <img src={`../../imgs/office.jpg`} alt="shopping-image" />
+                <img className="main-image" src={`../../imgs/office.jpg`} alt="shopping-image" />
             </section>
         </header>
     )

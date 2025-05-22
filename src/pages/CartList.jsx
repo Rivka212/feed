@@ -7,8 +7,8 @@ import { useEffect, useState } from 'react';
 
 export function CartList() {
 
-    const [filterBy, setFilterBy] = useState({ inCart: 'yes' });
-    const products = useSelector(storeState => storeState.productModule.products)
+    const [filterBy, setFilterBy] = useState({ quantity:true });
+    const cartProducts = useSelector(storeState => storeState.productModule.cart)
     // const currentProduct = Products.length > 0 ? Products[Products.length - 1] : null;
 
     useEffect(() => {
@@ -16,11 +16,11 @@ export function CartList() {
     }, [filterBy])
 
     return (
-        <section className='cart'>
+        <section className='my-cart'>
             <h1 >MY CART</h1>
             <ul className="cart-list">
-                {products.map(product => (
-                    <li className="cart-preview" key={product.id}>
+                {cartProducts?.map(product => (
+                    <li className="cart-preview" key={product._id}>
                         <CartPreview product={product} />
                     </li>
                 )

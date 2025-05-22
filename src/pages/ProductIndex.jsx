@@ -3,12 +3,13 @@ import { useSelector } from 'react-redux'
 
 import { ProductList } from '../cmps/ProductList.jsx'
 import { ProductFilter } from '../cmps/ProductFilter.jsx'
-import { loadProducts, removeProduct, addProduct } from '../store/actions/product.action.js'
+import { loadProducts, removeProduct, addProductToCart } from '../store/actions/product.action.js'
 import { productService } from '../services/product/product.service.js'
+import { AppHeader } from '../cmps/AppHeader.jsx'
 
 
 export function ProductIndex() {
-    const [filterBy, setFilterBy] = useState({ message: '', email: '' });
+    const [filterBy, setFilterBy] = useState({ title: '', price: '' });
 
     const products = useSelector(storeState => storeState.productModule.products)
     // const currentProduct = Products.length > 0 ? Products[Products.length - 1] : null;
@@ -16,7 +17,7 @@ export function ProductIndex() {
     useEffect(() => {
         loadProducts(filterBy)
     }, [filterBy])
-    
+
 
     async function onRemoveProduct(productId) {
         try {
@@ -26,9 +27,14 @@ export function ProductIndex() {
         }
     }
 
-    async function onAddProduct(product) {
+    async function onAddProductToCart(product) {
+        console.log(product);
+
         try {
-            const savedProduct = await addProduct(product)
+            const savedProduct = await addProductToCart(product)
+            // const savedProduct = await save(product)
+console.log('Sending product to addToCart:', product)
+
             console.log(`Product added (id: ${savedProduct._id})`)
         } catch (err) {
             console.log('Cannot add product')
@@ -43,11 +49,15 @@ export function ProductIndex() {
     }
 
     return (
-        <section className="main-container">
-            <div>
-                <ProductFilter filterBy={filterBy} onFilterBy={onSetFilterBy} />
-                <ProductList products={products} onRemoveProduct={onRemoveProduct} />
-            </div>
+        <section className="app">
+            <AppHeader />
+
+            <section className="main-container">
+                <div>
+                    <ProductFilter filterBy={filterBy} onFilterBy={onSetFilterBy} />
+                    <ProductList products={products} onAddProductToCart={onAddProductToCart} />
+                </div>
+            </section>
         </section>
     )
 

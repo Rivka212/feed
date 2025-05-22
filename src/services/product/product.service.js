@@ -10,6 +10,7 @@ export const productService = {
     remove,
     save,
     getEmptyProduct,
+    addToCart,
 }
 
 window.cs = productService
@@ -21,8 +22,8 @@ async function query(filterBy = {}) {
     //     const regExp = new RegExp(filterBy.message, 'i')
     //     Products = Products.filter(Product => regExp.test(Product.message))
     // }
-    if (filterBy.inCart) {
-        products = products.filter(product => product.inCart === 'yes')
+    if (filterBy.quantity) {
+        products = products.filter(product => product.quantity >0)
     }
     return products
 }
@@ -44,10 +45,21 @@ async function save(product) {
     return product
 }
 
+async function addToCart(product) {
+    console.log(product);
+    console.log('Sending product to addToCart:', product)
+
+    product.quantity = (product.quantity || 0) + 1
+    product = await storageService.put(STORAGE_KEY, product)
+    // product = storageService.put(STORAGE_KEY, product)
+    return product
+
+}
+
 function getEmptyProduct() {
     return {
-        email: '',
-        message: '',
+        title: '',
+        price: '',
     }
 }
 
@@ -56,67 +68,67 @@ function _createProducts() {
     if (!products || products.length === 0) {
         products = [
             {
-                id: 1,
+                _id: 1,
                 title: 'tablet',
                 price: 900,
                 img: 'tablet.jpg',
-                inCart: 'yes',
+                quantity: 1,
             },
             {
-                id: 2,
+                _id: 2,
                 title: 'lamp',
                 price: 45,
                 img: 'lamp.jpg',
-                inCart: 'yes',
+                quantity: 1,
             },
             {
-                id: 3,
+                _id: 3,
                 title: 'box-pens',
                 price: 12,
                 img: 'box-pens.jpg',
-                inCart: 'yes',
+                quantity: 1,
             },
             {
-                id: 4,
+                _id: 4,
                 title: 'flowerpot',
                 price: 50,
                 img: 'flowerpot.jpg',
-                inCart: 'yes',
+                quantity: 1,
             },
             {
-                id: 5,
+                _id: 5,
                 title: 'diary',
                 price: 23,
                 img: 'diary.jpg',
-                inCart: 'yes',
+                quantity: 0,
             },
             {
-                id: 6,
+                _id: 6,
                 title: 'calculator',
                 price: 18,
                 img: 'calculator.jpg',
-                inCart: 'yes',
+                quantity: 0,
             },
             {
-                id: 7,
+                _id: 7,
                 title: 'letter',
                 price: 5,
                 img: 'letter.jpg',
-                inCart: 'yes',
+                quantity: 0,
             },
             {
-                id: 8,
+                _id: 8,
                 title: 'pens',
                 price: 12,
                 img: 'pens.jpg',
-                inCart: 'yes',
+                quantity: 1,
             },
             {
-                id: 9,
+                _id: 9,
                 title: 'notebook',
                 price: 17,
                 img: 'notebook.jpg',
-                inCart: 'yes',
+                quantity: 1,
             },
         ]
         saveToStorage(STORAGE_KEY, products)

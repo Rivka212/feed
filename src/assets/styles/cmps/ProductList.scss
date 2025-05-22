@@ -6,26 +6,29 @@
     .product-preview {
         background-color: white;
         margin-bottom: 25px;
-       border-radius: 5px;
-       margin-inline: 5px;
+        border-radius: 5px;
+        margin-inline: 5px;
 
-        h4{
+        h4 {
             font-size: 0.9em;
             font-weight: 600;
+            text-transform: capitalize;
+
         }
+
         h4:last-of-type {
             font-weight: 400;
             color: rgb(146, 147, 149);
         }
 
-        h4:first-of-type{
+        h4:first-of-type {
             margin: 0;
         }
 
         img {
             height: 100px;
             width: 100%;
-            object-fit: cover; 
+            object-fit: cover;
             border-radius: 4px;
         }
 
@@ -35,11 +38,20 @@
             align-items: center;
             justify-content: center;
             padding: 15px;
-            break-inside: avoid; 
+            break-inside: avoid;
 
             div {
                 // margin-left: 20px;
             }
+        }
+
+        .btn-add {
+            border-radius: 5px;
+            border: none;
+            padding: 7px;
+            color: rgb(104, 101, 101);
+            background-color: rgb(218, 213, 213);
+
         }
     }
 

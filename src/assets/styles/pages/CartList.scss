@@ -1,4 +1,4 @@
-.cart {
+.my-cart {
     padding-inline: 50px;
     margin: 40px;
 
@@ -54,17 +54,3 @@
 
 
 
-
-
-
-// turn (
-//         <section className='cart'>
-//             <h1 >MY CART</h1>
-//             <ul className="cart-list">
-//                 {products.map(product => (
-//                     <li className="cart-preview" key={product.id}>
-//                         <CartPreview product={product} />
-//                     </li>
-//                 )
-//                 )}
-//             // </ul>
